@@ -26,7 +26,12 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.7.2",
+        "@fortawesome/fontawesome-svg-core": "^1.2.15",
+        "@fortawesome/free-solid-svg-icons": "^5.7.2",
+        "@fortawesome/react-fontawesome": "^0.1.4",
+        "i": "^0.3.6",
         "moment": "^2.24.0",
+        "npm": "^6.9.0",
         "react-router-dom": "^4.4.0",
         "reactstrap": "^7.1.0",
         "thunk": "0.0.1"
