@@ -29,6 +29,7 @@
         "@fortawesome/fontawesome-svg-core": "^1.2.15",
         "@fortawesome/free-solid-svg-icons": "^5.7.2",
         "@fortawesome/react-fontawesome": "^0.1.4",
+        "admin-lte": "^2.4.10",
         "i": "^0.3.6",
         "moment": "^2.24.0",
         "npm": "^6.9.0",
