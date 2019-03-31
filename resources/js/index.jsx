@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
+import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Welcome from '../views/Welcome';
-import Dashboard from '../views/Dashboard/component';
-import billingCycle from '../views/billingCycle/component';
+import store from './store/index'
+import Routes from './routes';
+
 
 class App extends Component {
+    constructor(props) {
+        super(props);
 
+        this.state = {}
+    }
     render() {
         return (
-            <Router>
-                <div>
-                    <Route exact path={'/'} component={Welcome} />
-                    <Route exact path={'/dashboard'} component={Dashboard} />
-                    <Route exact path={'/billingCycle'} component={billingCycle} />
-                </div>
-            </Router>
+            <Provider store={store}>
+                <Routes />
+            </Provider>
         );
     }
 }
