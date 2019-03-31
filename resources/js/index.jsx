@@ -3,11 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Welcome from '../views/Welcome';
 import Dashboard from '../views/Dashboard/component';
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faIgloo } from '@fortawesome/free-solid-svg-icons'
-
-library.add(faIgloo)
+import billingCycle from '../views/billingCycle/component';
 
 class App extends Component {
 
@@ -17,6 +13,7 @@ class App extends Component {
                 <div>
                     <Route exact path={'/'} component={Welcome} />
                     <Route exact path={'/dashboard'} component={Dashboard} />
+                    <Route exact path={'/billingCycle'} component={billingCycle} />
                 </div>
             </Router>
         );

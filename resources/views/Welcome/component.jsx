@@ -10,6 +10,7 @@ class Welcome extends Component {
                     <div className="title">Economy App</div>
                     <div className='links'>
                         <Link to="/dashboard" className="link">Dashboard</Link>
+                        <Link to="/billingCycle" className="link">Ciclo de pagamento</Link>
                     </div>
 
                 </div>

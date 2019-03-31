@@ -14,3 +14,5 @@ require('./bootstrap');
  */
 
 require('./index');
+
+import '@trendmicro/react-sidenav/dist/react-sidenav.css';
