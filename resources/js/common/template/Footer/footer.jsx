@@ -8,7 +8,7 @@ export default class Footer extends Component {
                 <footer className="main-footer">
                     <strong>
                         Copyright &copy; 2019
-                        <a href='/' target='_blank' className="teste"> Tupy</a>.
+                        <a href='https://instagram.com/aguinaldo.tupy' target='_blank'> Tupy</a>.
                         </strong>
                 </footer>
             </div>

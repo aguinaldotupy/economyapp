@@ -1,17 +1,5 @@
 export default {
-    user: {
-        authenticate: false,
-        error: ''
-    },
-    integration: {
-        types: [],
-        integrations: []
-    },
-    dashboard: {},
-    commercial: {},
-    marketing: {
-        product_performance: {}
-    }
+    dashboard: {summary: {credit:2000, debt:800}},
+    tab: { selected: '', visible: {} },
+    billingCycle: {list: []}
 };
-
-//Apenas um exemplo

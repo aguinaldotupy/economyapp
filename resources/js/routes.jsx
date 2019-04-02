@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import { connect } from 'react-redux';
 
-import Welcome from '../views/Welcome';
-import Dashboard from '../views/Dashboard/component';
-import billingCycle from '../views/billingCycle/component';
+import Welcome from './components/Welcome';
+import Dashboard from './components/Dashboard';
+import billingCycle from './components/billingCycle';
 
 const Routes = () => (
     <Router>

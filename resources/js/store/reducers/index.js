@@ -1,7 +1,15 @@
 import { combineReducers } from 'redux';
+import { reducer as formReducer } from 'redux-form';
+
+import DashboardReducer from '../reducers/dashboard';
+import TabReducer from '../reducers/tab';
+import BillingCycleReducer from '../reducers/billingCycle';
 
 const rootReducer = combineReducers({
-    dashboard: () => ({summary: {credit: 100, debt:50}})
+    dashboard: DashboardReducer,
+    tab: TabReducer,
+    billingCycle: BillingCycleReducer,
+    form: formReducer
 })
 
 export default rootReducer

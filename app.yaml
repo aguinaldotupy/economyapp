@@ -1,0 +1,42 @@
+runtime: php
+env: flex
+
+runtime_config:
+  document_root: public
+
+# Ensure we skip ".env", which is only for local development
+skip_files:
+  - .env
+
+env_variables:
+  # Put production environment variables here.
+  APP_LOG: errorlog
+  APP_KEY: "base64:tIo+X7X3m8AssN5vPFol+lAAxhlYaN0kxmgCoWG2XvA="
+
+# runtime: php
+# env: flex
+
+# runtime_config:
+#   document_root: public
+# env_variables:
+#     APP_LOG: errorlog
+#     APP_KEY: "base64:tIo+X7X3m8AssN5vPFol+lAAxhlYaN0kxmgCoWG2XvA="
+#     # APP_STORAGE: /tmp
+#     # VIEW_COMPILED_PATH: /tmp
+#     # CACHE_DRIVER: database
+#     # SESSION_DRIVER: database
+#     # DB_DATABASE: economyapp
+#     # DB_USERNAME: root
+#     # DB_PASSWORD: 2805Isac
+#     # DB_SOCKET: "/cloudsql/economyapp:europe-west1:economyapp"
+
+# handlers:
+#   - url: /css/(.+\.(css))$
+#     static_files: public/css/\1
+#     upload: .+\.(css)$
+#   - url: /js/(.+\.(js))$
+#     static_files: public/js/\1
+#     upload: .+\.(js)$
+#   - url: /fonts/(.+\.(eot|svg|ttf|woff|woff2))$
+#     static_files: public/fonts/\1
+#     upload: .+\.(eot|svg|ttf|woff|woff2)$

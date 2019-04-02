@@ -33,14 +33,14 @@
         "@fortawesome/free-solid-svg-icons": "^5.7.2",
         "@fortawesome/react-fontawesome": "^0.1.4",
         "@trendmicro/react-sidenav": "^0.4.5",
-        "adminlte-reactjs": "^1.0.6",
-        "i": "^0.3.6",
         "moment": "^2.24.0",
         "npm": "^6.9.0",
         "react-redux": "^6.0.1",
         "react-router-dom": "^4.4.0",
         "reactstrap": "^7.1.0",
         "redux": "^4.0.1",
+        "redux-form": "^8.1.0",
+        "redux-promise": "^0.6.0",
         "redux-thunk": "^2.3.0",
         "thunk": "0.0.1"
     }

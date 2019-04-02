@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import style from './style.scss';
 
-
-export default class Header extends React.Component {
+export default class Header extends Component {
     constructor(props) {
         super(props);
 
@@ -18,35 +18,40 @@ export default class Header extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className={`${style.header}`}>
+            <div className="content">
                 <Navbar color="dark" dark expand="md">
                     <NavbarBrand href="/">Economy <i className="fas fa-dollar-sign"></i> App </NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
                         <UncontrolledDropdown nav inNavbar>
-                            <NavLink href="/dashboard">Dashboard</NavLink>
+                            <NavLink href="/dashboard" className="link">Dashboard</NavLink>
+                        </UncontrolledDropdown>
+                        <UncontrolledDropdown nav inNavbar>
+                            <NavLink href="/billingCycle" className="link">Ciclo de pagamentos</NavLink>
                         </UncontrolledDropdown>
                             <UncontrolledDropdown nav inNavbar>
-                                <DropdownToggle nav caret>Cadastro</DropdownToggle>
+                                <DropdownToggle nav caret className="link">Cadastro</DropdownToggle>
                                 <DropdownMenu>
-                                    <DropdownItem href="/billingCycle">Ciclo de pagamentos</DropdownItem>
+                                    <DropdownItem>Ciclo de pagamentos</DropdownItem>
                                 </DropdownMenu>
                             </UncontrolledDropdown>
 
                             <UncontrolledDropdown nav inNavbar>
-                                <DropdownToggle nav caret>Finanças</DropdownToggle>
+                                <DropdownToggle nav caret className="link">Finanças</DropdownToggle>
                                 <DropdownMenu>
                                     <DropdownItem>Receita</DropdownItem>
                                     <DropdownItem>Despesas</DropdownItem>
                                 </DropdownMenu>
                             </UncontrolledDropdown>
                             <NavItem>
-                                <NavLink href="https://github.com/aguinaldotupy/economyapp">GitHub</NavLink>
+                                <NavLink href="https://github.com/aguinaldotupy/economyapp" className="link">GitHub</NavLink>
                             </NavItem>
                         </Nav>
                     </Collapse>
                 </Navbar>
+                </div>
             </div>
         );
     }
