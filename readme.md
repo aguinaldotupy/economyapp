@@ -1,3 +1,5 @@
+Caso queira colaborar com o projeto, de um fork e bora codar!
+
 ## Economy App
 
 Sistema em desenvolvimento com as tecnologias Laravel e React.
