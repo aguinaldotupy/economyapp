@@ -1,12 +1,8 @@
-import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { getListBC, showUpdate, showDelete, getListCredit } from '../../store'
+import React, { Component } from 'react'
 
-class List extends Component {
-
+export default class List extends Component {
     componentWillMount() {
-        this.props.getListBC()
+        this.props.getListCredit()
     }
 
     renderRows() {
@@ -14,8 +10,7 @@ class List extends Component {
         return list.map(bc => (
             <tr key={bc.id}>
                 <td>{bc.name}</td>
-                <td>{bc.month}</td>
-                <td>{bc.year}</td>
+                <td>{bc.value}</td>
                 <td>
                     <button className='btn btn-warning' onClick={() => this.props.showUpdate(bc)}>
                         <i className='fas fa-pencil-alt'></i>
@@ -35,7 +30,6 @@ class List extends Component {
                         <tr>
                             <th>Nome</th>
                             <th>Mês</th>
-                            <th>Ano</th>
                             <th className='table-actions'>Ações</th>
                         </tr>
                     </thead>
@@ -48,11 +42,3 @@ class List extends Component {
         )
     }
 }
-
-const mapStateToProps = (state, ownProps) => ({list: state.billingCycle.list});
-const mapDispatchToProps = dispatch => bindActionCreators({getListBC, showUpdate, showDelete, getListCredit}, dispatch)
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(List);

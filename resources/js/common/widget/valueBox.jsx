@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Grid from '../layout/Grid';
+import Grid from '../layout/grid/grid';
 import style from './style.scss';
 
 export default props => (

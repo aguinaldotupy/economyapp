@@ -1,15 +1,12 @@
-import { BILLING_CYCLE_FETCHED } from './types'
+import { CREDIT_FETCHED } from './types'
 import { api } from '../../services'
-import { toastr } from 'react-redux-toastr'
-import { reset as resetForm, initialize } from 'redux-form'
-import { selectTab, showTabs } from './tab'
 import initialState from '../initialState';
 
-export const getListBC = () => {
+export const getListCredit = () => {
     return dispatch => {
-        api.get('/billingCycles')
+        api.get('/credit')
             .then(({ request, data }) => {
-                dispatch({ type: BILLING_CYCLE_FETCHED, payload: { providers: request, data } });
+                dispatch({ type: CREDIT_FETCHED, payload: { providers: request, data } });
             });
     }
 }
@@ -29,7 +26,7 @@ export function remove(values) {
 function submit(values, method) {
     return dispatch => {
         const id = values.id ? values.id : ''
-        api[method](`/billingCycles/${id}`, values)
+        api[method](`/credit/${id}`, values)
             .then(resp => {
                 toastr.success('Sucesso', 'Operação realizada com sucesso.')
                 dispatch(init())
@@ -44,19 +41,19 @@ function submit(values, method) {
 
 }
 
-export function showUpdate(billingCycle) {
+export function showUpdate(creditReduc) {
     return [
         showTabs('tabUpdate'),
         selectTab('tabUpdate'),
-        initialize('billingCycleForm', billingCycle)
+        initialize('creditForm', creditReduc)
     ]
 }
 
-export function showDelete(billingCycle) {
+export function showDelete(creditReduc) {
     return [
         showTabs('tabDelete'),
         selectTab('tabDelete'),
-        initialize('billingCycleForm', billingCycle)
+        initialize('creditForm', creditReduc)
     ]
 }
 
@@ -65,6 +62,6 @@ export function init() {
         showTabs('tabList', 'tabCreate'),
         selectTab('tabList'),
         getListBC(),
-        initialize('billingCycleForm', initialState.initValues)
+        initialize('creditForm', initialState.initValues)
     ]
 }

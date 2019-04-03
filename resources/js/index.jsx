@@ -4,19 +4,23 @@ import ReactDOM from 'react-dom';
 
 import store from './store';
 import Routes from './routes';
+import Messages from '../js/common/msg'
 
 
 class App extends Component {
-    constructor(props) {
-        super(props);
+    // constructor(props) {
+    //     super(props);
 
-        this.state = {}
-    }
+    //     this.state = {}
+    // }
     render() {
         return (
-            <Provider store={store}>
-                <Routes />
-            </Provider>
+            <div>
+                <Provider store={store}>
+                    <Routes />
+                    <Messages />
+                </Provider>
+            </div>
         );
     }
 }

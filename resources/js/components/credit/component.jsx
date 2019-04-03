@@ -1,28 +1,27 @@
-import React, { Component } from 'react';
-import style from './style.scss';
+import React, { Component } from 'react'
 
-import Footer from '../../common/template/Footer/footer';
 import Header from '../../common/template/Header/component';
+import Footer from '../../common/template/Footer/footer';
+import ContentHeader from '../../common/template/Header/contentHeader';
 import Tabs from '../../common/tab/tabs';
 import TabsContent from '../../common/tab/tabsContent';
 import TabsHeader from '../../common/tab/tabsHeader';
 import TabHeader from '../../common/tab/tabHeader';
 import TabContent from '../../common/tab/tabContent';
-import ContentHeader from '../../common/template/Header/contentHeader';
-import List from './list';
-import Form from './form';
+import List from './list'
 
-class billingCycle extends Component {
+export default class Credit extends Component {
 
-    componentDidMount() {
-        this.props.init()
-    }
+    // componentDidMount() {
+    //     this.props.init()
+    // }
+
     render() {
         return (
-            <div className={`${style.billingCycle}`}>
+            <div>
                 <Header />
                 <div className='container-fluid'>
-                    <ContentHeader title='Ciclos de pagamentos' small='Cadastro' className="title-dashboard" />
+                    <ContentHeader title='Receitas' small='Lista' />
                     <div>
                         <Tabs>
                             <TabsHeader>
@@ -34,19 +33,19 @@ class billingCycle extends Component {
 
                             <TabsContent>
                                 <TabContent id='tabList'>
-                                <List />
+                                    <List />
                                 </TabContent>
                                 <TabContent id='tabCreate'>
-                                <Form onSubmit={this.props.create}
-                                    submitLabel='Incluir' submitClass='primary' />
+                                    {/* <Form
+                                        submitLabel='Incluir' submitClass='primary' /> */}
                                 </TabContent>
                                 <TabContent id='tabUpdate'>
-                                <Form onSubmit={this.props.update}
-                                    submitLabel='Alterar' submitClass='info' />
+                                    {/* <Form onSubmit={this.props.update}
+                                        submitLabel='Alterar' submitClass='info' /> */}
                                 </TabContent>
                                 <TabContent id='tabDelete'>
-                                <Form onSubmit={this.props.remove} readOnly={true}
-                                    submitLabel='Excluir' submitClass='danger' />
+                                    {/* <Form onSubmit={this.props.remove} readOnly={true}
+                                        submitLabel='Excluir' submitClass='danger' /> */}
                                 </TabContent>
                             </TabsContent>
                         </Tabs>
@@ -54,8 +53,6 @@ class billingCycle extends Component {
                 </div>
                 <Footer />
             </div>
-        );
+        )
     }
 }
-
-export default billingCycle;

@@ -41,7 +41,7 @@ export default class Header extends Component {
                             <UncontrolledDropdown nav inNavbar>
                                 <DropdownToggle nav caret className="link">Finanças</DropdownToggle>
                                 <DropdownMenu>
-                                    <DropdownItem>Receita</DropdownItem>
+                                    <DropdownItem href='/credit'>Receita</DropdownItem>
                                     <DropdownItem>Despesas</DropdownItem>
                                 </DropdownMenu>
                             </UncontrolledDropdown>

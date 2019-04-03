@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import Welcome from './components/Welcome';
 import Dashboard from './components/Dashboard';
 import billingCycle from './components/billingCycle';
+import Credit from './components/credit';
 
 const Routes = () => (
     <Router>
@@ -13,6 +14,7 @@ const Routes = () => (
             <Route exact path={'/'} component={Welcome} />
             <Route exact path={'/dashboard'} component={Dashboard} />
             <Route exact path={'/billingCycle'} component={billingCycle} />
+            <Route exact path={'/credit'} component={Credit} />
         </div>
     </Router>
 )
