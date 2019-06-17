@@ -14,10 +14,16 @@ class CreateCreditTable extends Migration
     public function up()
     {
         Schema::create('credit', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->integer('billingCycle_id')->unsigned();
             $table->string('name', 100);
-            $table->decimal('value', 8,2);
+            $table->decimal('value', 8, 2);
+            $table->enum('status', ['PAGO', 'PENDENTE', 'AGENDADO']);
             $table->timestamps();
+        });
+
+        Schema::table('credit', function (Blueprint $table) {
+            $table->foreign('billingCycle_id')->references('id')->on('billing_cycle');
         });
     }
 

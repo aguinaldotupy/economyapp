@@ -1,6 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { showUpdatec, showDeletec, getListCredit } from '../../store'
 
-export default class List extends Component {
+class List extends Component {
+
     componentWillMount() {
         this.props.getListCredit()
     }
@@ -12,10 +16,10 @@ export default class List extends Component {
                 <td>{bc.name}</td>
                 <td>{bc.value}</td>
                 <td>
-                    <button className='btn btn-warning' onClick={() => this.props.showUpdate(bc)}>
+                    <button className='btn btn-warning' onClick={() => this.props.showUpdatec(bc)}>
                         <i className='fas fa-pencil-alt'></i>
                     </button>
-                    <button className='btn btn-danger' onClick={() => this.props.showDelete(bc)}>
+                    <button className='btn btn-danger' onClick={() => this.props.showDeletec(bc)}>
                         <i className='fas fa-trash'></i>
                     </button>
                 </td>
@@ -29,7 +33,7 @@ export default class List extends Component {
                     <thead>
                         <tr>
                             <th>Nome</th>
-                            <th>Mês</th>
+                            <th>Valor</th>
                             <th className='table-actions'>Ações</th>
                         </tr>
                     </thead>
@@ -42,3 +46,15 @@ export default class List extends Component {
         )
     }
 }
+
+const mapStateToProps = (state, ownProps) => ({list: state.creditReduc.list});
+const mapDispatchToProps = dispatch => bindActionCreators({
+    showUpdatec,
+    showDeletec,
+    getListCredit
+}, dispatch)
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(List);

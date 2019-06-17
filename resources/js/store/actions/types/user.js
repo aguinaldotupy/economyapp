@@ -1,0 +1,1 @@
+export const USER_LOAD_DATA = 'USER_LOAD_DATA';

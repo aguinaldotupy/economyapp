@@ -12,6 +12,20 @@ env_variables:
   # Put production environment variables here.
   APP_LOG: errorlog
   APP_KEY: "base64:tIo+X7X3m8AssN5vPFol+lAAxhlYaN0kxmgCoWG2XvA="
+  CACHE_DRIVER: database
+  SESSION_DRIVER: database
+  LOG_CHANNEL: stackdriver
+  ## Set these environment variables according to your CloudSQL configuration.
+  DB_HOST: localhost
+  DB_DATABASE: economyapp
+  DB_USERNAME: root
+  DB_PASSWORD: 2805Isac
+  DB_SOCKET: "/cloudsql/economyapp:europe-west1:economyapp"
+
+beta_settings:
+    # for Cloud SQL, set this value to the Cloud SQL connection name,
+    # e.g. "project:region:cloudsql-instance"
+    cloud_sql_instances: "economyapp:europe-west1:economyapp"
 
 # runtime: php
 # env: flex

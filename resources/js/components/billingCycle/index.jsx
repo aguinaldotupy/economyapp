@@ -5,13 +5,11 @@ import billingCycle from './component';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { selectTab, showTabs, getListBC, create, init, update, remove, getListCredit } from '../../store';
+import { getListBC, create, init, update, remove, getListCredit } from '../../store';
 
 // const mapStateToProps = (state, ownProps) => ({ });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-    selectTab,
-    showTabs,
     getListBC,
     create,
     init,

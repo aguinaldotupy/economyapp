@@ -15,8 +15,20 @@ class billingCycleController extends Controller
     public function index(Request $request)
     {
         $billingCycle = billingCycle::all();
+        $credits = \App\credit::all();
+        $debits = \App\debit::all();
+        foreach ($billingCycle as $BC) {}
+        foreach ($credits as $cr)
 
-        return response()->json($billingCycle);
+        $data [] = [
+            'id'        => $BC->id,
+            'credits'   => $credits,
+            'debts'     => $debits,
+            'name'      => $BC->name,
+            'year'      => $BC->year
+        ];
+
+        return response()->json($data);
     }
 
     /**

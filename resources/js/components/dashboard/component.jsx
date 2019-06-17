@@ -15,9 +15,9 @@ class Dashboard extends Component {
         this.state = {}
     }
 
-    // componentWillMount() {
-    //     this.props.getSummary()
-    // }
+    componentWillMount() {
+        this.props.getSummary()
+    }
     render() {
         const { credit, debt } = this.props.summary
         return (

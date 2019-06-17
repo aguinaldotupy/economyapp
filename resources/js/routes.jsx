@@ -3,10 +3,11 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import { connect } from 'react-redux';
 
-import Welcome from './components/Welcome';
-import Dashboard from './components/Dashboard';
+import Welcome from './components/welcome';
+import Dashboard from './components/dashboard';
 import billingCycle from './components/billingCycle';
-import Credit from './components/credit';
+import Credit from './components/credit/credit';
+import Debit from './components/debit/debit';
 
 const Routes = () => (
     <Router>
@@ -15,6 +16,7 @@ const Routes = () => (
             <Route exact path={'/dashboard'} component={Dashboard} />
             <Route exact path={'/billingCycle'} component={billingCycle} />
             <Route exact path={'/credit'} component={Credit} />
+            <Route exact path={'/debit'} component={Debit} />
         </div>
     </Router>
 )

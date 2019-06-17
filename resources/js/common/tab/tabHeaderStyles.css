@@ -1,0 +1,13 @@
+span {
+  cursor: pointer;
+  text-decoration: none;
+  background-color: transparent;
+}
+span:hover {
+  color: #1b69bd;
+  text-decoration: none;
+  text-decoration: underline;
+}
+span:disabled {
+  text-decoration: line-through;
+}

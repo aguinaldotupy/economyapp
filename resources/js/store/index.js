@@ -1,5 +1,5 @@
-import reducers from './reducers';
 import { createStore, applyMiddleware } from 'redux';
+import reducers from './reducers';
 
 import promise from 'redux-promise';
 import multi from 'redux-multi';

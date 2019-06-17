@@ -7,7 +7,7 @@ class Welcome extends Component {
         return (
             <div className={style.welcome}>
                 <div className="content">
-                    <div className="title">Economy App</div>
+                    <div className="title">Economy .App</div>
                     <div className='links'>
                         <Link to="/dashboard" className="link">Dashboard</Link>
                         <Link to="/billingCycle" className="link">Ciclo de pagamento</Link>

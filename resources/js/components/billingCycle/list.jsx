@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { getListBC, showUpdate, showDelete, getListCredit } from '../../store'
+import { FaPencilAlt, FaTrash } from 'react-icons/fa'
+
+import { getListBC, showUpdate, showDelete, getListCredit } from '../../store';
 
 class List extends Component {
 
@@ -18,10 +20,10 @@ class List extends Component {
                 <td>{bc.year}</td>
                 <td>
                     <button className='btn btn-warning' onClick={() => this.props.showUpdate(bc)}>
-                        <i className='fas fa-pencil-alt'></i>
+                        <FaPencilAlt />
                     </button>
                     <button className='btn btn-danger' onClick={() => this.props.showDelete(bc)}>
-                        <i className='fas fa-trash'></i>
+                        <FaTrash />
                     </button>
                 </td>
             </tr>
@@ -49,7 +51,7 @@ class List extends Component {
     }
 }
 
-const mapStateToProps = (state, ownProps) => ({list: state.billingCycle.list});
+const mapStateToProps = (state, ownProps) => ({list: state.billingCycleReduc.list});
 const mapDispatchToProps = dispatch => bindActionCreators({getListBC, showUpdate, showDelete, getListCredit}, dispatch)
 
 export default connect(

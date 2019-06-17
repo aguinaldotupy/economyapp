@@ -1,27 +1,32 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+// import style from './style.scss';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
-import Header from '../../common/template/Header/component';
+import { createc, initCredit, updatec, removec, getListCredit } from '../../store';
+
 import Footer from '../../common/template/Footer/footer';
-import ContentHeader from '../../common/template/Header/contentHeader';
-import Tabs from '../../common/tab/tabs';
+import Header from '../../common/template/Header/component';
+import ContentHeader from '../../common/template/Header/contentHeader'
+import Tabs from '../../common/tab/tabs'
 import TabsContent from '../../common/tab/tabsContent';
 import TabsHeader from '../../common/tab/tabsHeader';
 import TabHeader from '../../common/tab/tabHeader';
 import TabContent from '../../common/tab/tabContent';
-import List from './list'
+import List from './creditList';
+import Form from './creditForm';
 
-export default class Credit extends Component {
+class Credit extends Component {
 
-    // componentDidMount() {
-    //     this.props.init()
-    // }
-
+    componentDidMount() {
+        this.props.initCredit()
+    }
     render() {
         return (
             <div>
                 <Header />
                 <div className='container-fluid'>
-                    <ContentHeader title='Receitas' small='Lista' />
+                    <ContentHeader title='Receita' small='1.0' className="title-dashboard" />
                     <div>
                         <Tabs>
                             <TabsHeader>
@@ -36,16 +41,16 @@ export default class Credit extends Component {
                                     <List />
                                 </TabContent>
                                 <TabContent id='tabCreate'>
-                                    {/* <Form
-                                        submitLabel='Incluir' submitClass='primary' /> */}
+                                    <Form onSubmit={this.props.createc}
+                                        submitLabel='Incluir' submitClass='primary' />
                                 </TabContent>
                                 <TabContent id='tabUpdate'>
-                                    {/* <Form onSubmit={this.props.update}
-                                        submitLabel='Alterar' submitClass='info' /> */}
+                                    <Form onSubmit={this.props.updatec}
+                                        submitLabel='Alterar' submitClass='info' />
                                 </TabContent>
                                 <TabContent id='tabDelete'>
-                                    {/* <Form onSubmit={this.props.remove} readOnly={true}
-                                        submitLabel='Excluir' submitClass='danger' /> */}
+                                    <Form onSubmit={this.props.removec} readOnly={true}
+                                        submitLabel='Excluir' submitClass='danger' />
                                 </TabContent>
                             </TabsContent>
                         </Tabs>
@@ -53,6 +58,22 @@ export default class Credit extends Component {
                 </div>
                 <Footer />
             </div>
-        )
+        );
     }
 }
+
+// const mapStateToProps = (state, ownProps) => ({ });
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+    createc,
+    initCredit,
+    updatec,
+    removec,
+    getListCredit
+}, dispatch)
+
+export default connect(null,
+    //     mapStateToProps,
+    mapDispatchToProps
+)(Credit);
+

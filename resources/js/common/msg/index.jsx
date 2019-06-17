@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Provider } from 'react-redux'
 import ReduxToastr from 'react-redux-toastr'
+import { Provider } from 'react-redux'
+import 'react-redux-toastr/lib/css/react-redux-toastr.min.css'
 import store from '../../store'
 
 export default class Messages extends Component {

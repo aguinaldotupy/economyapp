@@ -1,0 +1,1 @@
+export const DEBIT_FETCHED = 'DEBIT_FETCHED';

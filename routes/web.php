@@ -14,3 +14,8 @@
 Route::get('/{path}', function () {
     return view('app');
 })->where('path', '.*');
+
+Route::get('/log/{message}', function ($message) {
+    Log::info("Hello my log, message: $message");
+    return view('teste');
+});

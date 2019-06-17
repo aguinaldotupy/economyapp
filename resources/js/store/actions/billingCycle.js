@@ -1,7 +1,7 @@
 import { BILLING_CYCLE_FETCHED } from './types'
 import { api } from '../../services'
 import { toastr } from 'react-redux-toastr'
-import { reset as resetForm, initialize } from 'redux-form'
+import { initialize } from 'redux-form'
 import { selectTab, showTabs } from './tab'
 import initialState from '../initialState';
 

@@ -8,7 +8,7 @@ export default class Footer extends Component {
                 <footer className="main-footer">
                     <strong>
                         Copyright &copy; 2019
-                        <a href='https://instagram.com/aguinaldo.tupy' target='_blank'> Tupy</a>.
+                        <a href='https://instagram.com/aguinaldo.tupy' target='javascript:;'/* eslint-disable-line */> Tupy</a>.
                         </strong>
                 </footer>
             </div>

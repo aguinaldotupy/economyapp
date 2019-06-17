@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { FaRegMoneyBillAlt } from 'react-icons/fa';
 import style from './style.scss';
 
 export default class Header extends Component {
@@ -21,7 +22,7 @@ export default class Header extends Component {
             <div className={`${style.header}`}>
             <div className="content">
                 <Navbar color="dark" dark expand="md">
-                    <NavbarBrand href="/">Economy <i className="fas fa-dollar-sign"></i> App </NavbarBrand>
+                    <NavbarBrand href="/">Finance <FaRegMoneyBillAlt /> App </NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
@@ -42,7 +43,7 @@ export default class Header extends Component {
                                 <DropdownToggle nav caret className="link">Finanças</DropdownToggle>
                                 <DropdownMenu>
                                     <DropdownItem href='/credit'>Receita</DropdownItem>
-                                    <DropdownItem>Despesas</DropdownItem>
+                                    <DropdownItem href='/debit'>Despesas</DropdownItem>
                                 </DropdownMenu>
                             </UncontrolledDropdown>
                             <NavItem>

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Grid from '../layout/grid/grid';
 import style from './style.scss';
 

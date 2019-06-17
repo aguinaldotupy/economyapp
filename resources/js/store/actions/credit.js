@@ -1,5 +1,8 @@
 import { CREDIT_FETCHED } from './types'
 import { api } from '../../services'
+import { toastr } from 'react-redux-toastr'
+import { initialize } from 'redux-form'
+import { selectTab, showTabs } from './tab'
 import initialState from '../initialState';
 
 export const getListCredit = () => {
@@ -11,25 +14,25 @@ export const getListCredit = () => {
     }
 }
 
-export function create(values) {
+export function createc(values) {
     return submit(values, 'post')
 }
 
-export function update(values) {
+export function updatec(values) {
     return submit(values, 'put')
 }
 
-export function remove(values) {
+export function removec(values) {
     return submit(values, 'delete')
 }
 
 function submit(values, method) {
     return dispatch => {
-        const id = values.id ? values.id : ''
+        const id = values._id ? values._id : ''
         api[method](`/credit/${id}`, values)
             .then(resp => {
                 toastr.success('Sucesso', 'Operação realizada com sucesso.')
-                dispatch(init())
+                dispatch(initCredit())
             })
             .catch(errors => {
                 toastr.error('Deu erro =(', errors)
@@ -41,27 +44,27 @@ function submit(values, method) {
 
 }
 
-export function showUpdate(creditReduc) {
+export function showUpdatec(creditReduc) {
     return [
         showTabs('tabUpdate'),
         selectTab('tabUpdate'),
-        initialize('creditForm', creditReduc)
+        initialize('FormCredit', creditReduc)
     ]
 }
 
-export function showDelete(creditReduc) {
+export function showDeletec(creditReduc) {
     return [
         showTabs('tabDelete'),
         selectTab('tabDelete'),
-        initialize('creditForm', creditReduc)
+        initialize('FormCredit', creditReduc)
     ]
 }
 
-export function init() {
+export function initCredit() {
     return [
         showTabs('tabList', 'tabCreate'),
         selectTab('tabList'),
-        getListBC(),
-        initialize('creditForm', initialState.initValues)
+        getListCredit(),
+        initialize('FormCredit', initialState.initValures2)
     ]
 }
