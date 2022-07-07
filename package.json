@@ -35,7 +35,7 @@
         "@trendmicro/react-sidenav": "^0.4.5",
         "bcrypt": "^3.0.5",
         "jsonwebtoken": "^8.5.1",
-        "moment": "^2.24.0",
+        "moment": "^2.29.4",
         "npm": "^6.12.1",
         "react-icons": "^3.6.1",
         "react-redux": "^6.0.1",
